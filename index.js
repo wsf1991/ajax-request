@@ -2,12 +2,15 @@
  * @fileoverview Http request in node.js
  * @author douzi <liaowei08@gmail.com> 
  */
-var http = require('http');
+// var http = require('http');
+var http;
 var util = require('utils-extend');
 var url = require('url');
-var path = require('path');
+// var path = require('path');
+var path;
 var querystring = require('querystring');
-var file = require('file-system');
+// var file = require('file-system');
+var file;
 
 /**
  * @description
@@ -18,7 +21,11 @@ var file = require('file-system');
  * request('url', function(err, res, body) { });
  * request({url: '', headers: {}, method: 'POST'}, function(err, res, body) { });
  */
-function request(options, callback) {
+function request(options, callback, h, p, f) {
+  http = h;
+  path = p;
+  http = h;
+
   var opts = {
     headers: {
       'Content-Type': 'application/json'
